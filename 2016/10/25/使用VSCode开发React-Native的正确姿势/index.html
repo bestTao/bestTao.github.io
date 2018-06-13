@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Windows 平台搭建教程">
+<meta name="keywords" content="VSCode,React-Native,编辑器配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 VSCode 上开发 React-Native">
+<meta property="og:url" content="https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/index.html">
+<meta property="og:site_name" content="Salama">
+<meta property="og:description" content="Windows 平台搭建教程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-13T12:40:16.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 VSCode 上开发 React-Native">
+<meta name="twitter:description" content="Windows 平台搭建教程">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>在 VSCode 上开发 React-Native</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">主页</a></li>
+         
+          <li><a href="/archives/">列表</a></li>
+         
+          <li><a href="/about/">我</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/11/03/[译]闪屏页的正确使用/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&text=在 VSCode 上开发 React-Native"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&is_video=false&description=在 VSCode 上开发 React-Native"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在 VSCode 上开发 React-Native&body=Check out this article: https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&name=在 VSCode 上开发 React-Native&description=&lt;p&gt;Windows 平台搭建教程&lt;br&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、配置-Typescript"><span class="toc-number">2.1.</span> <span class="toc-text">一、配置 Typescript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、配置-TypeScript-Definition-Files-Typings"><span class="toc-number">2.2.</span> <span class="toc-text">二、配置 TypeScript Definition Files (Typings)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件推荐"><span class="toc-number">3.</span> <span class="toc-text">插件推荐</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        在 VSCode 上开发 React-Native
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Salama</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2016-10-25T15:17:10.000Z" itemprop="datePublished">2016-10-25</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/React-Native/">React-Native</a>, <a class="tag-link" href="/tags/VSCode/">VSCode</a>, <a class="tag-link" href="/tags/编辑器配置/">编辑器配置</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Windows 平台搭建教程<br><a id="more"></a></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>使用 VSCode 开发 React-Native 是个不错的选择，因为这个编辑器十分简洁、流畅，并且微软官方提供了 <code>React Native Tools</code> 插件，支持代码高亮、debug 以及代码提示等十分强大的功能，并且 VSCode 本身的代码跳转十分优秀。但是我下载了此插件，发现其他功能正常，唯独代码没法正确提示，右下角也没有显示 <code>salsa</code> 。经过我的不懈 Google 以及查看官方文档：<a href="https://code.visualstudio.com/Docs/languages/javascript" target="_blank" rel="noopener">JavaScript in VS Code</a>，最终找到了替代解决方案。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="一、配置-Typescript"><a href="#一、配置-Typescript" class="headerlink" title="一、配置 Typescript"></a>一、配置 Typescript</h4><p><strong>1.全局安装 <code>typescript</code></strong></p>
+<p><code>npm install typescript@next -g</code></p>
+<!-- 安装完成会如图所示：
+
+![](http://p1.bqimg.com/567571/91acd3ee1c00d1ab.jpg) -->
+<p>当我们重启 VSCode 会得到提示：全局安装的typescript 与 VSCode 所指向的版本号不一致，所以我们要进行下一步操作。</p>
+<p><strong>2.配置用户设置 <code>settings.json</code>，通过 <code>文件&gt;首选项&gt;用户设置</code> 即可打开。</strong></p>
+<p>指定 <code>typescript</code> 的 <code>lib</code> 文件夹的路径，这个路径在安装完成时如上图所示，根据我的安装路径，对用户设置添加如下更改：</p>
+<p><code>&quot;typescript.tsdk&quot;: &quot;C:/Users/钱涛/AppData/Roaming/npm/node_modules/typescript/lib&quot;</code></p>
+<p>重启后你的 VSCode 的下方会显示出 Typescript 的版本号。<br><!-- (http://p1.bqimg.com/567571/c62c1a1f7df8e5d9.jpg) --></p>
+<p>有了以上的设置，我们从 <code>react-native</code> 包中引入组件模块时就会有相应的提示，我们还可以进行进一步的设置</p>
+<h4 id="二、配置-TypeScript-Definition-Files-Typings"><a href="#二、配置-TypeScript-Definition-Files-Typings" class="headerlink" title="二、配置 TypeScript Definition Files (Typings)"></a>二、配置 TypeScript Definition Files (Typings)</h4><p>官方对其是这样解释的：</p>
+<blockquote>
+<p>You get VS Code IntelliSense for third-party libraries and modules with type definition *.d.ts files. TypeScript definition files are written in TypeScript so they can express the data types of parameters and functions, allowing VS Code to provide a rich IntelliSense experience.</p>
+</blockquote>
+<p>大体意思就是通过 Typings 能对第三方库例如咱们所使用的 <code>react-native</code> 进行其变量及方法的提示。</p>
+<p><strong>1.全局安装 <code>typings</code></strong></p>
+<p><code>npm install typings --global</code></p>
+<!-- 安装完成如下图所示：
+
+![](http://p1.bqimg.com/567571/1ee3f54070152403.jpg) -->
+<p><strong>2.在当前项目根目录安装相应的 typings 包</strong></p>
+<p>可以在 VSCode 中通过快捷键 <code>Ctrl+Shift+C</code> 打开控制台并定位到当前项目的根目录，然后全局安装：</p>
+<p><code>typings install dt~react-native --save --global</code></p>
+<!-- 安装完成如下图所示：
+
+![](http://p1.bqimg.com/567571/e1dffcda0f488e27.jpg) -->
+<p>并且你的 VSCode 的根目录下会多一个 <code>typings.json</code> 文件。</p>
+<p>至此配置完以后编写代码就会可以自动提示补全</p>
+<!-- ![](http://p1.bqimg.com/567571/f4005a8af5ce249f.jpg) -->
+<p>并且鼠标移过去还能有相应的文档提示了</p>
+<h3 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h3><p>为了开发的便捷，我还推荐以下插件：</p>
+<ul>
+<li><p><code>Auto Close Tag</code> 自动闭合标签</p>
+</li>
+<li><p><code>Auto Rename Tag</code> 自动重命名标签，配合上面的插件使用，基本上能赶上IntelliJ IDEA系的功能了</p>
+</li>
+<li><p><code>Reactjs code snippets</code> react的代码提示，如 <code>componentWillMount</code> 方法可以通过 <code>cwm</code> 直接获得</p>
+</li>
+<li><p><code>Path Intellisense</code> 文件路径提示补全</p>
+</li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">主页</a></li>
+         
+          <li><a href="/archives/">列表</a></li>
+         
+          <li><a href="/about/">我</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、配置-Typescript"><span class="toc-number">2.1.</span> <span class="toc-text">一、配置 Typescript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、配置-TypeScript-Definition-Files-Typings"><span class="toc-number">2.2.</span> <span class="toc-text">二、配置 TypeScript Definition Files (Typings)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件推荐"><span class="toc-number">3.</span> <span class="toc-text">插件推荐</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&text=在 VSCode 上开发 React-Native"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&is_video=false&description=在 VSCode 上开发 React-Native"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在 VSCode 上开发 React-Native&body=Check out this article: https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&title=在 VSCode 上开发 React-Native"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://qiantao94.github.io/2016/10/25/使用VSCode开发React-Native的正确姿势/&name=在 VSCode 上开发 React-Native&description=&lt;p&gt;Windows 平台搭建教程&lt;br&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 qiantao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">主页</a></li>
+         
+          <li><a href="/archives/">列表</a></li>
+         
+          <li><a href="/about/">我</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'Salama';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
