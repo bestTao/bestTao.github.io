@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="只是一个简易的 Python 脚本">
+<meta name="keywords" content="Android,Python,Proguard">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生成随机字符的 Android Proguard 混淆字典">
+<meta property="og:url" content="https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/index.html">
+<meta property="og:site_name" content="Salama">
+<meta property="og:description" content="只是一个简易的 Python 脚本">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-13T13:24:42.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生成随机字符的 Android Proguard 混淆字典">
+<meta name="twitter:description" content="只是一个简易的 Python 脚本">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>生成随机字符的 Android Proguard 混淆字典</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">主页</a></li>
+         
+          <li><a href="/archives/">列表</a></li>
+         
+          <li><a href="/about/">我</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/01/16/solarized-dark-no-bold/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/01/16/自定义控件？试试300行代码实现QQ侧滑菜单/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&text=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&is_video=false&description=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=生成随机字符的 Android Proguard 混淆字典&body=Check out this article: https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&name=生成随机字符的 Android Proguard 混淆字典&description=&lt;p&gt;只是一个简易的 Python 脚本&lt;br&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        生成随机字符的 Android Proguard 混淆字典
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Salama</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-01-04T08:24:55.000Z" itemprop="datePublished">2018-01-04</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/Proguard/">Proguard</a>, <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>只是一个简易的 Python 脚本<br><a id="more"></a><br>Android 中使用 Proguard 进行混淆后，代码中的类名、方法名、变量名会变成诸如 <code>a b c</code> 这样的字符。<br><br>其实我们可以指定混淆后使用哪些字符代替显示，也就是在  <code>proguard-rules.pro</code> 中可以这样配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-obfuscationdictionary 字典文件</span><br><span class="line">-classobfuscationdictionary 字典文件</span><br><span class="line">-packageobfuscationdictionary 字典文件</span><br></pre></td></tr></table></figure>
+<p>而这里的字典文件就是一个类似于这样的文本文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#混淆字典</span><br><span class="line"></span><br><span class="line">go</span><br><span class="line">O1</span><br><span class="line">VU</span><br><span class="line">VN</span><br><span class="line">0f</span><br><span class="line">vV</span><br><span class="line">HT</span><br><span class="line">AU</span><br><span class="line">Kd</span><br><span class="line">SX</span><br></pre></td></tr></table></figure>
+<p>上面的字典中的字符，是从大小写字母以及数字中随机抽取的。如果你也有这样的需求，你可以使用我的 <strong>Python</strong> 脚本：<br></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rand_string</span><span class="params">(length)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(random.choice(</span><br><span class="line">        string.ascii_lowercase + string.ascii_uppercase + string.digits)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    FILE = open(<span class="string">"proguard-dictionary.txt"</span>, <span class="string">'w'</span>)</span><br><span class="line">    WORD_LINES = <span class="number">40</span></span><br><span class="line">    FILE.write(<span class="string">"#proguard dictionary\n\n"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, WORD_LINES):</span><br><span class="line">        FILE.write(rand_string(<span class="number">2</span>)+<span class="string">"\n"</span>)</span><br><span class="line">    FILE.close()</span><br></pre></td></tr></table></figure>
+<p>希望你使用愉快 🙂</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">主页</a></li>
+         
+          <li><a href="/archives/">列表</a></li>
+         
+          <li><a href="/about/">我</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&text=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&is_video=false&description=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=生成随机字符的 Android Proguard 混淆字典&body=Check out this article: https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&title=生成随机字符的 Android Proguard 混淆字典"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://qiantao94.github.io/2018/01/04/Generate-Android-proguard-dictionary/&name=生成随机字符的 Android Proguard 混淆字典&description=&lt;p&gt;只是一个简易的 Python 脚本&lt;br&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 qiantao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">主页</a></li>
+         
+          <li><a href="/archives/">列表</a></li>
+         
+          <li><a href="/about/">我</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-120844447-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'Salama';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
