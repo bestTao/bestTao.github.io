@@ -15,7 +15,7 @@
 <meta property="og:description" content="Google 又双叒升级了 Android 的开发库，我们将根目录下的 build:gradle 版本由原先的 2.3.3 升级至 3.1.2，随之带来的问题是 Support Library 也需要升级。升级之后，gradle 脚本以及 support 包下相关类的 Api 发生了重大的改动。具体需要注意的改动如下： build.gradle 文件引入依赖的方式由原来的 compile 变更为现">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.superbed.cn/pic/5bd97ee19dc6d6216adec667">
-<meta property="og:updated_time" content="2018-11-01T14:08:26.982Z">
+<meta property="og:updated_time" content="2018-11-01T14:08:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="build:gradle 3.0 以及 Support Library 27.1.0 带来的 Api 变动">
 <meta name="twitter:description" content="Google 又双叒升级了 Android 的开发库，我们将根目录下的 build:gradle 版本由原先的 2.3.3 升级至 3.1.2，随之带来的问题是 Support Library 也需要升级。升级之后，gradle 脚本以及 support 包下相关类的 Api 发生了重大的改动。具体需要注意的改动如下： build.gradle 文件引入依赖的方式由原来的 compile 变更为现">
@@ -79,10 +79,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -159,7 +159,7 @@
 
     <div class="blog-post-comments">
         <div id="disqus_thread">
-            <noscript>Si us plau, activa JavaScript per poder veure el contingut.</noscript>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
     </div>
 
@@ -203,10 +203,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
