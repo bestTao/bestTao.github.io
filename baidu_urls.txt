@@ -1,1 +1,1 @@
-https://qiantao94.github.io/2018/09/03/new-api-in-gradle-3-0-and-support-library-27-1-0/
+https://qiantao94.github.io/2019/02/25/best-practice-in-rxjava-network-method/
