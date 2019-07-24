@@ -14,12 +14,10 @@
 <meta property="og:site_name" content="Salama">
 <meta property="og:description" content="基础教程！基础教程！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/82890cf6ly1g0svkchadyj20nw0nw40x.jpg">
-<meta property="og:updated_time" content="2019-03-06T03:01:21.277Z">
+<meta property="og:updated_time" content="2019-07-24T02:08:14.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxJava + BLE">
 <meta name="twitter:description" content="基础教程！基础教程！">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/82890cf6ly1g0svkchadyj20nw0nw40x.jpg">
     
     
         
@@ -212,11 +210,6 @@
 <h2 id="向蓝牙设备发送数据"><a href="#向蓝牙设备发送数据" class="headerlink" title="向蓝牙设备发送数据"></a>向蓝牙设备发送数据</h2><p>通信不仅仅是接收数据，还需要发送数据，这个实现起来很简单，只要使用我们之前拿到的 <code>BluetoothGattCharacteristic</code> 对象以及<code>BluetoothGatt</code> 对象进行相关方法的调用就行，在项目中由于需要对数据进行延时发送，所以也用到了 <code>timer</code>：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Observable.timer(time, TimeUnit.MILLISECONDS)</span><br><span class="line">        .subscribe(<span class="keyword">new</span> Action1&lt;Long&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Long l)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (mBleGatt != <span class="keyword">null</span> &amp;&amp; mBleGattChar != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    mBleGattChar.setValue(data);<span class="comment">//设置数据</span></span><br><span class="line">                    <span class="keyword">boolean</span> isSend = mBleGatt.writeCharacteristic(mBleGattChar);<span class="comment">//写入（发送）数据</span></span><br><span class="line">                    Log.d(TAG, <span class="string">"发送："</span> + (isSend ? <span class="string">"成功"</span> : <span class="string">"失败"</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
 <p>RxJava 的强大之处在于他有各种各样的操作符，可以对发布的数据源进行各种各样的处理，实际项目中有很多应用的场景。</p>
 <p>传送门：<a href="https://github.com/bestTao/RxBleDemo" target="_blank" rel="noopener">RxBleDemo</a></p>
-<p><br><br><br></p>
-<hr>
-<p><strong>关注公众号，了解更多哦～</strong>👇</p>
-<p><img src="https://ws1.sinaimg.cn/large/82890cf6ly1g0svkchadyj20nw0nw40x.jpg" style="float:left;width:130px"></p>
-<p><br><br><br><br><br></p>
 
   </div>
 </article>

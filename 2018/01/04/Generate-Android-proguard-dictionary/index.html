@@ -14,12 +14,10 @@
 <meta property="og:site_name" content="Salama">
 <meta property="og:description" content="只是一个简易的 Python 脚本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/82890cf6ly1g0svkchadyj20nw0nw40x.jpg">
-<meta property="og:updated_time" content="2019-03-06T03:00:18.227Z">
+<meta property="og:updated_time" content="2019-07-24T02:06:38.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生成随机字符的 Android Proguard 混淆字典">
 <meta name="twitter:description" content="只是一个简易的 Python 脚本">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/82890cf6ly1g0svkchadyj20nw0nw40x.jpg">
     
     
         
@@ -151,11 +149,6 @@
 <p>上面的字典中的字符，是从大小写字母以及数字中随机抽取的。如果你也有这样的需求，你可以使用我的 <strong>Python</strong> 脚本：<br></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rand_string</span><span class="params">(length)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(random.choice(</span><br><span class="line">        string.ascii_lowercase + string.ascii_uppercase + string.digits)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    FILE = open(<span class="string">"proguard-dictionary.txt"</span>, <span class="string">'w'</span>)</span><br><span class="line">    WORD_LINES = <span class="number">40</span></span><br><span class="line">    FILE.write(<span class="string">"#proguard dictionary\n\n"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, WORD_LINES):</span><br><span class="line">        FILE.write(rand_string(<span class="number">2</span>)+<span class="string">"\n"</span>)</span><br><span class="line">    FILE.close()</span><br></pre></td></tr></table></figure>
 <p>希望你使用愉快 🙂</p>
-<p><br><br><br></p>
-<hr>
-<p><strong>关注公众号，了解更多</strong>👇</p>
-<p><img src="https://ws1.sinaimg.cn/large/82890cf6ly1g0svkchadyj20nw0nw40x.jpg" style="float:left;width:130px"></p>
-<p><br><br><br><br><br></p>
 
   </div>
 </article>
